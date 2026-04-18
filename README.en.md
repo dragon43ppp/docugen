@@ -1,53 +1,42 @@
 # DocuGen Open
 
-[简体中文说明](./README.md)
+[简体中文](./README.md) | **English**
 
-DocuGen Open is a local document cleanup tool for importing TXT, Markdown, Word, Excel, PDF, and image files, refining the extracted content, and exporting the final result as Word or Excel.
+DocuGen Open is a local document cleanup tool. You can import `TXT / Markdown / DOCX / XLSX / PDF / images`, continue editing the extracted content in the app, and export the final result as Word or Excel.
 
-This public edition does not ship with any company API, admin account, default key, or internal endpoint. AI features use a bring-your-own-endpoint model, so you can connect your own OpenAI-compatible service such as OpenAI, a Gemini-compatible endpoint, a Qwen-compatible endpoint, or any gateway that supports `/models` and `/chat/completions`.
+This repository does not provide any hosted model service out of the box. After launch, enter your own:
 
-## Features
+- `API Base URL`
+- `API Key`
 
-- Import `TXT / Markdown / DOCX / XLSX / PDF / images`
-- Edit and preview extracted Markdown locally
-- Direct `PDF -> Word` intermediate export
-- AI formatting, smart tables, and bid-document rewriting
-- Export final `DOCX / XLSX`
-
-## Workflow
-
-1. Import a PDF or another file
-2. If the source is a PDF, click `Download Intermediate Word`
-3. Continue refining the extracted content in the app
-4. Export the final DOCX or Excel file
-
-## Does PDF to Word require an LLM?
-
-No.
-
-The `PDF -> Word` path uses a local offline structure engine when available. Your online model endpoint is only used for:
-
-- AI formatting
-- Smart tables
-- Bid-document rewriting
+to connect any OpenAI-compatible endpoint. If needed, you can also set a default model name.
 
 ## Quick Start
 
-### Option 1: Start everything on Windows
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/dragon43ppp/docugen.git
+cd docugen
+```
+
+### 2. Start the project
+
+Option A: one-click start on Windows
 
 ```bat
 Start-DocuGen.bat
 ```
 
-The script will:
+The script will automatically:
 
 - install frontend dependencies
-- create a local backend virtual environment
+- create a local backend virtual environment at `.backend-venv`
 - install backend dependencies
-- start the backend on `http://127.0.0.1:8001`
-- start the frontend on `http://127.0.0.1:9000`
+- start the backend at `http://127.0.0.1:8001`
+- start the frontend at `http://127.0.0.1:9000`
 
-### Option 2: Start manually
+Option B: start manually
 
 Frontend:
 
@@ -65,26 +54,54 @@ cd backend
 ..\.backend-venv\Scripts\python -m uvicorn main:app --host 127.0.0.1 --port 8001 --reload
 ```
 
-## Required runtime config
+### 3. First-run configuration
 
-On first launch, fill in:
+To get started, fill in at least:
 
 - `API Base URL`
-- `API Key` (optional)
+- `API Key`
+
+Optional fields:
+
 - `Default model`
-- `Bid model` (optional)
+- `Bid model`
 
-The config is stored only in browser `localStorage`.
+These values are stored only in browser `localStorage`.
 
-## Enabling the offline PDF engine
+## Features
 
-If you want scanned-PDF OCR, layout analysis, table extraction, and direct PDF-to-DOCX export, prepare a runnable `Offline_PDF_Structure` environment and set:
+- Import `TXT / Markdown / DOCX / XLSX / PDF / images`
+- Keep editing and previewing Markdown in the app
+- Export an intermediate `PDF -> Word` result
+- AI formatting, smart tables, and bid-document rewriting
+- Export final `DOCX / XLSX`
+
+## Workflow
+
+1. Import a PDF or another document
+2. If the source is a PDF, click `Download Intermediate Word`
+3. Continue refining the extracted content in the app
+4. Export the final DOCX or Excel file
+
+## Does PDF to Word require an LLM?
+
+No.
+
+The `PDF -> Word` step prefers the local offline structure pipeline. Your configured online endpoint is only used for:
+
+- AI formatting
+- Smart tables
+- Bid-document rewriting
+
+## Enable the offline PDF engine
+
+If you want scanned-PDF OCR, layout analysis, table extraction, and direct `PDF -> DOCX` conversion, prepare a runnable `Offline_PDF_Structure` environment and set:
 
 ```powershell
-$env:DOCUGEN_OFFLINE_PDF_ROOT="D:\path\to\Offline_PDF_Structure"
+$env:DOCUGEN_OFFLINE_PDF_ROOT="D:\BaiduNetdiskDownload\PDF图片表格数据提取\Offline_PDF_Structure"
 ```
 
-You can also place a runnable bundle at:
+You can also place a runnable offline bundle at:
 
 ```text
 backend/offline_pdf_bundle
@@ -93,16 +110,9 @@ backend/offline_pdf_bundle
 ## Security Notes
 
 - No real API key is included in this repository
-- No company-internal API or default gateway is included
-- The frontend only sends the endpoint config you explicitly enter
+- No default hosted endpoint is included
+- The frontend only uses the `API Base URL` and `API Key` you enter
 - The backend only allows HTTPS upstreams by default, or local HTTP addresses
-
-## Scope of This Open Repository
-
-- Local document import / cleanup / export
-- Offline PDF bridge integration
-- User-supplied AI endpoint configuration
-- No internal account system, default keys, or company-specific release logic
 
 ## License
 

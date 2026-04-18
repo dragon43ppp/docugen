@@ -3,6 +3,7 @@
 [简体中文](./README.md) | **English**
 
 DocuGen Open is a local document cleanup tool. You can import `TXT / Markdown / DOCX / XLSX / PDF / images`, continue editing the extracted content in the app, and export the final result as Word or Excel.
+It is suitable for `PDF to Word`, `Markdown to DOCX`, AI-generated draft cleanup, document normalization, and bid or tender document processing.
 
 This repository does not provide any hosted model service out of the box. After launch, enter your own:
 
@@ -75,6 +76,12 @@ These values are stored only in browser `localStorage`.
 - Export an intermediate `PDF -> Word` result
 - AI formatting, smart tables, and bid-document rewriting
 - Export final `DOCX / XLSX`
+
+## Use Cases
+
+- Normalize messy files and inconsistent document formats into one clean, unified output
+- Convert AI-generated Markdown drafts into Word or Excel files that are easier to circulate inside a company or send to clients
+- Clean up, restructure, rewrite, and standardize bid documents, tender responses, and proposal materials
 
 ## Workflow
 

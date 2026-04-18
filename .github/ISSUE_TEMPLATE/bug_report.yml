@@ -1,0 +1,75 @@
+name: Bug report
+description: Report a reproducible bug in DocuGen Markdown DOCX
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please avoid sharing API keys, private endpoints, or sensitive document content.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: Briefly describe the problem
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Import
+        - PDF to Word
+        - AI formatting
+        - Smart table
+        - Bid document processing
+        - Export
+        - API configuration
+        - Offline PDF engine
+        - UI / layout
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Windows 11 + Chrome 135
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the app
+        2. Import a PDF
+        3. Click Download Intermediate Word
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error message or logs
+      description: Redact private information before posting
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I removed API keys and sensitive document content
+          required: true

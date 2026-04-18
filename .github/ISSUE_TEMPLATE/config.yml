@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Chinese README
+    url: https://github.com/dragon43ppp/docugen-markdown-docx/blob/main/README.md
+    about: Read the Chinese project overview and quick start guide
+  - name: English README
+    url: https://github.com/dragon43ppp/docugen-markdown-docx/blob/main/README.en.md
+    about: Read the English project overview and quick start guide

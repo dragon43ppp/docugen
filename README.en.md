@@ -168,6 +168,15 @@ git clone https://github.com/dragon43ppp/docugen-markdown-docx.git
 cd docugen-markdown-docx
 ```
 
+## Contributing
+
+Issues and pull requests are welcome.
+
+- Community discussion: [GitHub Discussions](https://github.com/dragon43ppp/docugen-markdown-docx/discussions)
+- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Security policy: [SECURITY.md](./SECURITY.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+
 ## License
 
 MIT

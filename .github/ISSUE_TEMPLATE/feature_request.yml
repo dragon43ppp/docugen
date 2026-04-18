@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest an improvement for DocuGen Markdown DOCX
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: Briefly describe the feature
+    validations:
+      required: true
+  - type: dropdown
+    id: scenario
+    attributes:
+      label: Main scenario
+      options:
+        - Document normalization
+        - Markdown to DOCX
+        - PDF to Word
+        - OCR / scanned PDF
+        - Bid / tender document handling
+        - Export quality
+        - API configuration
+        - Team workflow
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      placeholder: Describe the workflow or pain point
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      placeholder: Describe the feature you want
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example files or use cases

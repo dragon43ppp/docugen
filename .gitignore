@@ -29,6 +29,9 @@ backend/data/
 backend/.env
 backend/.env.*
 
+# Local GitHub analytics snapshots
+data/github-metrics/
+
 # Claude local metadata
 .claude/
 

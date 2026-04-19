@@ -16,14 +16,40 @@
   <strong>PDF to Word</strong> · <strong>Markdown to DOCX</strong> · <strong>Messy files to clean deliverables</strong>
 </p>
 
-DocuGen Markdown DOCX is a local document cleanup tool. You can import `TXT / Markdown / DOCX / XLSX / PDF / images`, continue editing the extracted content in the app, and export the final result as Word or Excel.
+<p align="center">
+  <a href="#free-wechat-mini-program"><strong>Try the Mini Program</strong></a> ·
+  <a href="#quick-start"><strong>Run Locally</strong></a> ·
+  <a href="https://github.com/dragon43ppp/docugen-markdown-docx"><strong>Clone Repo</strong></a>
+</p>
+
+DocuGen Markdown DOCX is a local document cleanup tool. You can import `TXT / Markdown / DOCX / XLSX / PDF / images`, continue editing the extracted content in the app, and export the final result as Word or Excel.  
 It is suitable for `PDF to Word`, `Markdown to DOCX`, AI-generated draft cleanup, document normalization, and bid or tender document processing.
+
+> For Chinese users who only want the fastest free experience, the WeChat Mini Program is the easiest starting point. Use this repository when you need local processing, your own API endpoint, or customizable workflows.
 
 ## Understand It in 3 Seconds
 
 - Turn messy PDFs, Word files, Markdown drafts, and image documents into one clean deliverable
 - Convert AI-generated Markdown into client-ready or internally shareable DOCX files
 - Clean up, standardize, and export bid documents, tender responses, and proposal materials
+
+## Free WeChat Mini Program
+
+For Chinese users who want a faster zero-install experience, a free WeChat Mini Program is also available: **谈单底牌**.
+
+<p align="center">
+  <img src="docs/assets/wechat-mini-program-qr.jpg" alt="WeChat Mini Program QR code" width="280" />
+</p>
+
+Use the Mini Program if you only need:
+
+- quick conversion
+- lightweight formatting
+- no local setup
+
+Use this repository if you need local processing, your own API endpoint, or customizable workflows.
+
+## Default Integration Model
 
 This repository does not provide any hosted model service out of the box. After launch, enter your own:
 
@@ -120,7 +146,7 @@ The `PDF -> Word` step prefers the local offline structure pipeline. Your config
 - Smart tables
 - Bid-document rewriting
 
-## Enable the offline PDF engine
+## Enable the Offline PDF Engine
 
 If you want scanned-PDF OCR, layout analysis, table extraction, and direct `PDF -> DOCX` conversion, prepare a runnable `Offline_PDF_Structure` environment and set:
 
